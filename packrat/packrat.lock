@@ -1,17 +1,17 @@
 PackratFormat: 1.4
-PackratVersion: 0.5.0
-RVersion: 3.3.2
-Repos: CRAN=https://cran.rstudio.com/
+PackratVersion: 0.4.9.1
+RVersion: 3.4.4
+Repos: CRAN=https://cran.rstudio.com
 
 Package: BH
 Source: CRAN
-Version: 1.69.0-1
-Hash: 15f597ed227897f4f793b6161260f4b9
+Version: 1.66.0-1
+Hash: 4cc8883584b955ed01f38f68bc03af6d
 
 Package: R6
 Source: CRAN
-Version: 2.4.0
-Hash: 948a547c484e5bea15eee76cc53cce3f
+Version: 2.3.0
+Hash: 8eccabbf292b5aba632985cde6406fc3
 
 Package: Rcpp
 Source: CRAN
@@ -53,20 +53,20 @@ Hash: ff2840dd9b0d563fc80377a5a45510cd
 
 Package: curl
 Source: CRAN
-Version: 3.3
-Hash: b201f64e6e1469e8a3571c746ffa9059
+Version: 3.2
+Hash: e3318ec2d42d15a38485bab047d114ba
 
 Package: dplyr
 Source: CRAN
-Version: 0.7.4
-Hash: 935608766595d5803ed2001ec494e7fe
+Version: 0.7.8
+Hash: d6e576944199cba782a471015a822848
 Requires: BH, R6, Rcpp, assertthat, bindrcpp, glue, magrittr,
-    pkgconfig, plogr, rlang, tibble
+    pkgconfig, plogr, rlang, tibble, tidyselect
 
 Package: fansi
 Source: CRAN
-Version: 0.2.2
-Hash: 486d020b5f61cdb62a072fad5f5a05f0
+Version: 0.4.0
+Hash: f147621f72b561485bfffcae78c4f5d5
 
 Package: glue
 Source: CRAN
@@ -75,14 +75,14 @@ Hash: 1fbde6dec830370be696eee8ef31c9e4
 
 Package: httr
 Source: CRAN
-Version: 1.4.0
-Hash: 62d62d3ffcc9a34411b6e35a813f72dd
+Version: 1.3.1
+Hash: 2d32e01e53d532c812052e27a1021441
 Requires: R6, curl, jsonlite, mime, openssl
 
 Package: jsonlite
 Source: CRAN
-Version: 1.6
-Hash: 5f969e213e966135393e3e304abf3f49
+Version: 1.5
+Hash: 9c51936d8dd00b2f1d4fe9d10499694c
 
 Package: magrittr
 Source: CRAN
@@ -96,19 +96,27 @@ Hash: 2ed8f98b8284ad733f3907fc6e2f1334
 
 Package: openssl
 Source: CRAN
-Version: 1.2.2
-Hash: 539a2d62e62212923ceabe379f20502a
+Version: 1.3
+Hash: 7235e0ada86fbb386b7e2e3046cda46e
 Requires: askpass
 
 Package: packrat
-Source: CRAN
-Version: 0.5.0
-Hash: 498643e765d1442ba7b1160a1df3abf9
+Source: github
+Version: 0.4.9-1
+Hash: 2b4edf59823bbc14c9c70948a3b49926
+GithubRepo: packrat
+GithubUsername: rstudio
+GithubRef: v0.4.9-1
+GithubSha1: f98789177c02b3066144dfb8c39ea67d681fd73c
+RemoteHost: api.github.com
+RemoteRepo: packrat
+RemoteUsername: rstudio
+RemoteSha: f98789177c02b3066144dfb8c39ea67d681fd73c
 
 Package: pillar
 Source: CRAN
-Version: 1.3.1
-Hash: 9ed4c2a5d3047bfba3e852ad5e806d91
+Version: 1.3.0
+Hash: 3e43f774fa6dfba877caca1aebbeaa6a
 Requires: cli, crayon, fansi, rlang, utf8
 
 Package: pkgconfig
@@ -121,6 +129,24 @@ Source: CRAN
 Version: 0.2.0
 Hash: 81a8008a5e7858552503935f1abe48aa
 
+Package: plyr
+Source: CRAN
+Version: 1.8.4
+Hash: 1ca393a9f51341b8fa034f743adf1f53
+Requires: Rcpp
+
+Package: purrr
+Source: CRAN
+Version: 0.2.5
+Hash: 8b0c16db10c7e20b70cd37779a673a8b
+Requires: magrittr, rlang, tibble
+
+Package: reshape2
+Source: CRAN
+Version: 1.4.3
+Hash: c950c8ac85b81209635acb3ce21b4cce
+Requires: Rcpp, plyr, stringr
+
 Package: rlang
 Source: CRAN
 Version: 0.3.1
@@ -129,38 +155,47 @@ Hash: 1176a91e0c23d4fc8f48bc5704a6f826
 Package: rtson
 Source: github
 Version: 1.4.4
-Hash: d3026ead344390b4bc533338d4844e5a
+Hash: f41468e22b9401b04bcf834f2f6e8b40
 Requires: R6
 GithubRepo: TSON
 GithubUsername: tercen
 GithubRef: 1.4.4-rtson
 GithubSha1: 01c0ff70ed30b7332f506403713158959492f8ca
-GithubSubdir: rtson
-RemoteHost: https://api.github.com
+RemoteHost: api.github.com
 RemoteRepo: TSON
 RemoteUsername: tercen
-RemoteRef: 1.4.4-rtson
 RemoteSha: 01c0ff70ed30b7332f506403713158959492f8ca
+GithubSubdir: rtson
+
+Package: stringi
+Source: CRAN
+Version: 1.2.4
+Hash: 03ab60ef7fa4627b38ad67c95ce6b04c
+
+Package: stringr
+Source: CRAN
+Version: 1.3.1
+Hash: 9f417a1d899ed1f080942ab36998e8b5
+Requires: glue, magrittr, stringi
 
 Package: sys
 Source: CRAN
-Version: 3.1
-Hash: dc2a997b1b9a2d3f9c234491153cb951
+Version: 2.1
+Hash: 5ce312d2f816b21f602cb81fe4659a0b
 
 Package: tercen
 Source: github
-Version: 0.7.1
-Hash: b5d2115a9f39bac5e2e01f428cf1617e
+Version: 0.8.4
+Hash: 28cda928cf31e23a0a12e3340cbf4197
 Requires: R6, dplyr, httr, jsonlite, rtson, tibble, yaml
 GithubRepo: teRcen
 GithubUsername: tercen
-GithubRef: 0.7.1
-GithubSha1: 4f6cae07ca68202680409fb985db18be63a2e89a
-RemoteHost: https://api.github.com
+GithubRef: 0.8.4
+GithubSha1: 0307e66feaf73569f6657e4ff2606815498d9fda
+RemoteHost: api.github.com
 RemoteRepo: teRcen
 RemoteUsername: tercen
-RemoteRef: 0.7.1
-RemoteSha: 4f6cae07ca68202680409fb985db18be63a2e89a
+RemoteSha: 0307e66feaf73569f6657e4ff2606815498d9fda
 
 Package: tibble
 Source: CRAN
@@ -168,12 +203,18 @@ Version: 1.4.2
 Hash: 83895360ce4f8d2ce92eee00526b5b0b
 Requires: cli, crayon, pillar, rlang
 
+Package: tidyselect
+Source: CRAN
+Version: 0.2.5
+Hash: fad1cf10c5c4996fca6ca68e0716d2e6
+Requires: Rcpp, glue, purrr, rlang
+
 Package: utf8
 Source: CRAN
-Version: 1.1.3
-Hash: a2fe6a996668ee5850b7719f365e831b
+Version: 1.1.4
+Hash: f3f97ce59092abc8ed3fd098a59e236c
 
 Package: yaml
 Source: CRAN
-Version: 2.1.18
-Hash: 28c7e28c239d7a1d1bd579390bab89bd
+Version: 2.2.0
+Hash: a5ad5616d83d89f8d84cbf3cf4034e13

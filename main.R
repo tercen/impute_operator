@@ -1,11 +1,15 @@
 library(tercen)
 library(dplyr)
+library(reshape2)
 
-ctx = tercenCtx()
+data = (ctx = tercenCtx()) %>% 
+  select(.ci, .ri, .y) %>% 
+  reshape2::acast(.ci ~ .ri, fill=0.0, value.var='.y', fun.aggregate=mean)
 
-ctx %>% 
-  select(.y, .ci, .ri) %>% 
-  group_by(.ci, .ri) %>%
-  mutate(impute = ifelse(is.na(.y), 0, mean(.y, na.rm = TRUE))) %>%
+data.frame(
+  .y=as.vector(data),
+  .ci=rep(seq.int(from=0,to=ncol(data)-1), nrow(data)),
+  .ri=rep(0:(nrow(data)-1), each=ncol(data))) %>%
   ctx$addNamespace() %>%
   ctx$save()
+ 
