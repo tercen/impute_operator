@@ -4,7 +4,7 @@ library(reshape2)
 
 data = (ctx = tercenCtx()) %>% 
   select(.ci, .ri, .y) %>% 
-  reshape2::acast(.ci ~ .ri, fill=0.0, value.var='.y', fun.aggregate=mean)
+  reshape2::acast(.ri ~ .ci, fill=0.0, value.var='.y', fun.aggregate=mean)
 
 data.frame(
   imputed = as.vector(data),
