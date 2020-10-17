@@ -1,7 +1,7 @@
 {
   "name": "Impute",
   "description": "Impute NA to zero per cell",
-  "tags": ["basic statistics"],
+  "tags": ["data wrangling"],
   "authors": ["tercen"],
   "urls": ["https://github.com/tercen/impute_operator"],
   "properties": []
