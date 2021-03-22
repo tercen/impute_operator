@@ -16,4 +16,4 @@ Output relations|.
 
 ##### Details
 
-The operator takes all the values of a cell and replaces it with the mean and if all values are NA then it is replaced with zero. The imputation is done per cell. There is one value calculated and returned for each of the input cell.
+The operator takes all the values of a cell and replaces the NA with zero. The imputation is done per cell. There is one value calculated and returned for each of the input cell.
