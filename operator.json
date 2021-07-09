@@ -4,7 +4,12 @@
   "tags": ["data wrangling"],
   "authors": ["tercen"],
   "urls": ["https://github.com/tercen/impute_operator"],
-  "properties": []
+  "properties": [ {
+    "kind": "DoubleProperty",
+    "name": "value",
+    "defaultValue": 0,
+    "description": "value to be used for imputation"
+    }]
 }
 
 
