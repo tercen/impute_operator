@@ -1,6 +1,6 @@
 {
-  "name": "Impute",
-  "description": "Impute NA to zero per cell",
+  "name": "Impute - Zero",
+  "description": "Replaces missing data (NA) from a table with 0 (zero).",
   "tags": ["data wrangling"],
   "authors": ["tercen"],
   "urls": ["https://github.com/tercen/impute_operator"],
