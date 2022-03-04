@@ -6,7 +6,7 @@
     {
     "kind": "PropertyValue",
     "name": "mean",
-    "value": "false"
+    "value": false
     }
   ], 
   "inputDataUri": "c03_simple_exp_NA_test.csv",
