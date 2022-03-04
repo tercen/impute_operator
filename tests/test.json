@@ -1,7 +1,7 @@
 {
   "kind": "OperatorUnitTest",
   "name": "imput operator",
-  "namespace": "ds0",
+  "namespace": "ds2",
   "propertyValues": [
     {
     "kind": "PropertyValue",
