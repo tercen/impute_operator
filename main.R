@@ -20,12 +20,11 @@ if (ctx$op.value("mean")){
   
   mat_out$.ci<- as.integer(mat_out$.ci)
   mat_out$.ri<- as.integer(mat_out$.ri)
-} else{
+
+} else {
   
-  val<-ctx$op.value("value")
-  val<-1
-  
-  matrix <- ctx$as.matrix(fill=val)
+  val <- ctx$op.value("value")
+  matrix <- ctx$as.matrix(fill = val)
   
   mat_out <- data.frame(
     .ci=rep(0:(ncol(matrix)-1), each=nrow(matrix)),
