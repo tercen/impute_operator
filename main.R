@@ -31,6 +31,10 @@ if(method != "constant") {
   
 }
 
+df_out <- df_out %>% as_tibble() %>%
+  ctx$addNamespace()
+
 df_out %>%
-  ctx$addNamespace()%>%
   ctx$save()
+
+# build_test_data(df_out, ctx, test_name = "test", test_folder = "./tests")
