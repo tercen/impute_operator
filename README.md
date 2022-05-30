@@ -1,24 +1,25 @@
-# impute operator
+# Imputation operator
 
 ##### Description
 
-`impute` operator replaces NA with zero.
+The `impute` operator imputes missing data.
 
 ##### Usage
 
 Input projection|.
 ---|---
-`y-axis`        | is the input data for the imputation, per cell 
+`y-axis`        | is the input data to be imputed, per cell 
 
 Input parameters|.
 ---|---
-`value`        | numeric, value used for the imputation, default is 0
-
+`method`      | factor, imputation method (either contant, mean_per_row, or mean_per_column)
+`value`       | numeric, value used for contant imputation
 
 Output relations|.
 ---|---
-`impute`        | numeric, a copy of the input data with NA replaces with zeros 
+`imputed`        | numeric, imputed data
 
 ##### Details
 
-The operator takes all the values of a cell and replaces the NA with zero. The imputation is done per cell. There is one value calculated and returned for each of the input cell.
+The operator takes all the values of a cell and replaces the NA using the 
+specified imputation method. The imputation is done per cell.

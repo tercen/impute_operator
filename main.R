@@ -1,37 +1,36 @@
-library(tercen)
-library(tidyr)
-library(dplyr)
-library(reshape2)
+suppressPackageStartupMessages({
+  library(tercen)
+  library(tercenApi)
+  library(tidyr)
+  library(dplyr)
+  library(dtplyr)
+})
 
 ctx <- tercenCtx()
 
-if (ctx$op.value("mean")){
-  mat <- ctx %>%
-    select(.ci, .ri, .y) %>% 
-    reshape2::acast(.ri ~ .ci, value.var='.y', fill = NA) %>%
-    as.data.frame
+method <- ctx$op.value("method", as.character, "mean_per_row")
+
+df <- ctx %>% 
+  select(.ri, .ci, .y) %>%
+  dtplyr::lazy_dt() %>%
+  complete(.ri, .ci)
+
+
+if(method != "constant") {
   
-  mat[] <- lapply(mat, function(x) ifelse(is.na(x) | is.nan(x), mean(x, na.rm = TRUE), x)) 
-  colnames(mat) <- 1:ncol(mat) - 1
+  if(method == "mean_per_column") df <- df %>% group_by(.ci)
+  if(method == "mean_per_row") df <- df %>% group_by(.ri)
+  impute.mean <- function(x) replace(x, is.na(x), mean(x, na.rm = TRUE))
   
-  mat_out <- mat %>%
-    mutate(.ri = 1:nrow(.) - 1) %>%
-    gather(.ci, mean_imputed, -.ri)              
-  
-  mat_out$.ci<- as.integer(mat_out$.ci)
-  mat_out$.ri<- as.integer(mat_out$.ri)
+  df_out <- df %>% mutate(.y = impute.mean(.y)) %>% rename(imputed = .y)
 
 } else {
   
-  val <- ctx$op.value("value")
-  matrix <- ctx$as.matrix(fill = val)
+  val <- ctx$op.value("value", as.double, 0)
+  df_out <- df %>% replace_na(list(.y = val)) %>% rename(imputed = .y)
   
-  mat_out <- data.frame(
-    .ci=rep(0:(ncol(matrix)-1), each=nrow(matrix)),
-    .ri=rep(seq.int(from=0,to=nrow(matrix)-1), ncol(matrix)),
-    value_imputed=as.vector(matrix))
 }
 
-mat_out %>%
+df_out %>%
   ctx$addNamespace()%>%
   ctx$save()
