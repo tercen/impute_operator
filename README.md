@@ -12,7 +12,7 @@ Input projection|.
 
 Input parameters|.
 ---|---
-`method`      | factor, imputation method (either contant, mean_per_row, or mean_per_column)
+`method`      | factor, imputation method (either constant, mean_per_row, or mean_per_column)
 `value`       | numeric, value used for contant imputation
 
 Output relations|.
