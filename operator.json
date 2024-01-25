@@ -1,26 +1,32 @@
 {
   "name": "Impute",
   "description": "Replaces missing data (NA) from a table by the column mean or with a value.",
-  "tags": ["data wrangling"],
-  "authors": ["tercen"],
-  "urls": ["https://github.com/tercen/impute_operator"],
-  "properties": [  {
-    "kind": "EnumeratedProperty",
-    "name": "method",
-    "defaultValue": "constant",
-    "values": [
-      "constant",
-      "mean_per_column",
-      "mean_per_row"
-    ],
-    "description": "Method to be used for imputation"
+  "tags": [
+    "preprocessing"
+  ],
+  "authors": [
+    "tercen"
+  ],
+  "urls": [
+    "https://github.com/tercen/impute_operator"
+  ],
+  "properties": [
+    {
+      "kind": "EnumeratedProperty",
+      "name": "method",
+      "defaultValue": "constant",
+      "values": [
+        "constant",
+        "mean_per_column",
+        "mean_per_row"
+      ],
+      "description": "Method to be used for imputation"
     },
     {
-    "kind": "DoubleProperty",
-    "name": "value",
-    "defaultValue": 0,
-    "description": "Value to be used for imputation (constant method)"
-    }]
+      "kind": "DoubleProperty",
+      "name": "value",
+      "defaultValue": 0,
+      "description": "Value to be used for imputation (constant method)"
+    }
+  ]
 }
-
-
