@@ -1,6 +1,6 @@
 {
   "name": "Impute",
-  "description": "Replaces missing data (NA) from a table by the column mean or with a value.",
+  "description": "Replaces missing data by the column mean or an arbitrary value.",
   "tags": [
     "preprocessing"
   ],
