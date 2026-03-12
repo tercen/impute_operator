@@ -65,7 +65,7 @@
               {
                 "kind": "MetaFactor",
                 "name": "Data",
-                "type": "numeric",
+                "type": "double",
                 "description": "Input data to be imputed, per cell",
                 "ontologyMapping": "measurement",
                 "crosstabMapping": "y",
